@@ -19,7 +19,6 @@ export const AppContent = () => {
 
   const { items, addItem, updateItem, deleteItem } = useItems(selectedDate);
 
-  // Crear objeto de días con marcadores
   const marked: Record<string, any> = {};
   items.forEach((item) => {
     if (!marked[item.date]) {
@@ -36,7 +35,6 @@ export const AppContent = () => {
 
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
-      {/* Header */}
       <View style={styles.header}>
         <Text style={styles.title}>Agenda</Text>
 
@@ -51,7 +49,6 @@ export const AppContent = () => {
         </TouchableOpacity>
       </View>
 
-      {/* Calendario */}
       <Calendar
         firstDay={1}
         onDayPress={(day) => setSelectedDate(day.dateString)} 
@@ -59,7 +56,6 @@ export const AppContent = () => {
         style={styles.calendar}
       />
 
-      {/* Lista de items */}
       <ItemList
         items={items}
         onEdit={(item) => {
@@ -69,7 +65,6 @@ export const AppContent = () => {
         onDelete={deleteItem}
       />
 
-      {/* Modal para crear/editar */}
       <Modal visible={visible} animationType="fade" transparent={true}>
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>

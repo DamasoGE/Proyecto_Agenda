@@ -1,4 +1,3 @@
-// src/components/ItemForm.tsx
 import {
   View,
   TextInput,
@@ -64,7 +63,6 @@ export const ItemForm = ({ initialValues, onSubmit, onCancel }: Props) => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Fecha y Hora */}
       <View style={styles.row}>
         <View style={styles.pickerContainer}>
           <Text style={styles.label}>Fecha</Text>
@@ -96,7 +94,6 @@ export const ItemForm = ({ initialValues, onSubmit, onCancel }: Props) => {
         />
       )}
 
-      {/* Título */}
       <Text style={styles.label}>Título</Text>
       <TextInput
         placeholder="Título"
@@ -105,7 +102,6 @@ export const ItemForm = ({ initialValues, onSubmit, onCancel }: Props) => {
         style={styles.input}
       />
 
-      {/* Descripción */}
       <Text style={styles.label}>Descripción</Text>
       <TextInput
         placeholder="Descripción"
@@ -115,9 +111,7 @@ export const ItemForm = ({ initialValues, onSubmit, onCancel }: Props) => {
         multiline
       />
 
-      {/* Botones */}
       <View style={styles.buttons}>
-        {/* Cancelar */}
         <TouchableOpacity
           onPress={onCancel}
           style={[styles.button, styles.cancelButton]}
@@ -125,7 +119,6 @@ export const ItemForm = ({ initialValues, onSubmit, onCancel }: Props) => {
           <Text style={styles.buttonText}>Cancelar</Text>
         </TouchableOpacity>
 
-        {/* Guardar */}
         <TouchableOpacity
           onPress={handleSubmit}
           disabled={isDisabled}
